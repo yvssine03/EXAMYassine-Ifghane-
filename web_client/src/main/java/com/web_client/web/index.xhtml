@@ -1,0 +1,15 @@
+<h:form xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+    <h:dataTable value="#{cdBean.availableCds}" var="cd">
+        <h:column>
+            <f:facet name="header">Title</f:facet>
+            #{cd.title}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Artist</f:facet>
+            #{cd.artist}
+        </h:column>
+        <h:column>
+            <h:commandButton value="Borrow" action="#{cdBean.borrowCd(cd.id, 1)}"/>
+        </h:column>
+    </h:dataTable>
+</h:form>
